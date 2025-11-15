@@ -1,13 +1,24 @@
 node_modules
+
+# Ignore lockfiles we don't use
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+# bun.lock
+
 .DS_Store
-dist
-dist-ssr
-*.local
-count.txt
+.cache
 .env
-.nitro
-.tanstack
-.wrangler
+
+.data
+.vercel
 .output
-.vinxi
-todos.json
+.wrangler
+.netlify
+dist
+/build/
+/api/
+/server/build
+/public/build
+
+.tanstack
