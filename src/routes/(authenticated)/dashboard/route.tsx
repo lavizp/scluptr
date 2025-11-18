@@ -1,8 +1,18 @@
-import { createFileRoute, Link, Outlet } from "@tanstack/react-router";
+import { createFileRoute, Link, Outlet, redirect } from "@tanstack/react-router";
 import { Button } from "~/components/ui/button";
+import { authQueryOptions } from "~/lib/auth/queries";
 
 export const Route = createFileRoute("/(authenticated)/dashboard")({
   component: DashboardLayout,
+  beforeLoad: async ({ context }) => {
+    const user = await context.queryClient.ensureQueryData({
+      ...authQueryOptions(),
+      revalidateIfStale: true,
+    });
+    if (!user?.isActive) {
+      throw redirect({ to: "/onboarding" });
+    }
+  },
 });
 
 function DashboardLayout() {

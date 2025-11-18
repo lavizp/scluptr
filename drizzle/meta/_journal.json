@@ -8,6 +8,13 @@
       "when": 1763186731735,
       "tag": "0000_regular_reavers",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1763458704169,
+      "tag": "0001_magical_captain_america",
+      "breakpoints": true
     }
   ]
 }
